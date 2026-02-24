@@ -1,36 +1,206 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Carlux
 
-## Getting Started
+Modern Car Inventory Dashboard built with **Next.js**, **TypeScript**, **ShadCN UI**, and **Tailwind CSS**.
 
-First, run the development server:
+Carlux is a clean, responsive vehicle inventory application that fetches data from an external API and provides a smooth UI/UX experience with search, filtering, pagination, and modal previews.
+
+---
+
+## 🌍 Live Demo
+
+🔗 https://carlux-inventory.vercel.app/
+
+---
+
+## 🔗 Repository
+
+GitHub: https://github.com/asynctushar/carlux
+
+---
+
+## ✨ Features
+
+- 🚘 Vehicle inventory listing
+- 🔍 Search functionality
+- 🗂 Category filtering
+- 📄 Pagination support
+- 🖼 Image modal preview
+- ⚡ Optimized data fetching with caching & revalidation
+- 🎨 Modern UI with ShadCN components
+- 📱 Fully responsive design
+- 🛡 Type-safe architecture using TypeScript
+- 🧩 Clean component-based structure
+- 🌙 Theme support (Light / Dark mode)
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **Tailwind CSS**
+- **ShadCN UI**
+- **Lucide Icons**
+- **DummyJSON API**
+- **Vercel (Deployment)**
+
+---
+
+## 🌐 API Configuration
+
+This project uses only **one environment variable**, defined in:
+
+`.env.local`
+
+```env
+NEXT_PUBLIC_API_URL=https://dummyjson.com
+```
+
+A sample file is also provided:
+
+`.env.sample`
+
+```env
+NEXT_PUBLIC_API_URL=https://dummyjson.com
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/asynctushar/carlux.git
+cd carlux
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+or
+
+```bash
+yarn install
+```
+
+---
+
+### 3️⃣ Setup Environment Variables
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+NEXT_PUBLIC_API_URL=https://dummyjson.com
+```
+
+---
+
+### 4️⃣ Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will run at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+app/
+ ├── layout.tsx
+ ├── page.tsx                # Redirects to /inventory
+ └── (dashboard)/
+      ├── layout.tsx
+      └── inventory/
+           ├── page.tsx
+           └── loading.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+components/
+ ├── themes/
+ ├── layout/
+ └── inventory/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+services/
+ └── car.service.ts
+
+types/
+ └── car.type.ts
+```
+
+---
+
+## 🧠 Architecture Overview
+
+### 🖥 Server Components
+- Fetch vehicle data in route page
+- Handle error states
+- Implement caching & revalidation
+
+### 💻 Client Components
+- Search functionality
+- Category filtering
+- Pagination logic
+- Image modal interactions
+- Theme toggle support
+
+### 🧩 Layout Structure
+- Root layout (`app/layout.tsx`)
+- Dashboard layout grouping (`app/(dashboard)/layout.tsx`)
+- Inventory page inside dashboard route group
+- Loading UI for better UX during data fetching
+
+---
+
+## 🎯 UI / UX Principles Applied
+
+- Clear visual hierarchy
+- Modern card-based layout
+- Skeleton loading state
+- Centered and friendly error UI
+- Responsive grid system
+- Smooth filtering interactions
+- Accessible ShadCN components
+- Clean spacing & typography
+- Dark/Light theme support
+
+---
+
+## 🔒 Environment & Caching Strategy
+
+- Uses `force-cache`
+- Revalidates every 1 hour
+- Client-side filtering for instant experience
+- Optimized for performance and scalability
+
+---
+
+## 👨‍💻 Author
+
+GitHub: **@asynctushar**
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.

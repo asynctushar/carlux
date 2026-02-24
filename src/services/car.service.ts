@@ -1,6 +1,9 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export const getAllCar = async () => {
     try {
-        const res = await fetch("https://dummyjson.com/products/category/vehicle", {
+        const res = await fetch(API_URL + "/products/category/vehicle", {
+            method: "GET",
             cache: "force-cache",
             next: { revalidate: 60 * 60 },
         });
