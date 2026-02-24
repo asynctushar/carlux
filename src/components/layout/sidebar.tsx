@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Car, LayoutDashboard, LayoutGrid } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LayoutDashboard, LayoutGrid } from "lucide-react";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface SidebarProps {
@@ -22,43 +22,49 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
     ];
 
     return (
-        <div className="flex h-full flex-col bg-card">
+        <div className="flex h-full flex-col bg-sidebar text-sidebar-foreground">
             {/* Logo */}
-            <div className="border-b px-6 py-5">
-                <Link
-                    href="/inventory"
-                    className="flex items-center gap-3"
-                >
+            <div className="flex items-center gap-3 border-b border-sidebar-border px-5 py-5">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary shadow-sm">
                     <Image
                         src="/apple-touch-icon.png"
                         alt="Carlux Logo"
-                        width={28}
-                        height={28}
+                        width={20}
+                        height={20}
                         priority
+                        className="rounded"
                     />
-                    <span className="text-lg font-semibold tracking-tight">
-                        Carlux
-                    </span>
-                </Link>
+                </div>
+                <span className="text-base font-semibold tracking-tight text-sidebar-foreground">
+                    Carlux
+                </span>
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 space-y-1 p-4">
+            <nav className="flex-1 space-y-0.5 px-3 py-6">
                 {navItems.map((item) => {
                     const isActive = pathname === item.href;
 
                     return (
-                        <Button
+                        <Link
                             key={item.href}
-                            variant={isActive ? "default" : "ghost"}
-                            className="w-full justify-start gap-3"
-                            asChild
+                            href={item.href}
+                            onClick={onNavigate}
+                            className={cn(
+                                "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-all duration-150",
+                                isActive
+                                    ? "bg-primary text-primary-foreground shadow-sm"
+                                    : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                            )}
                         >
-                            <Link href={item.href} onClick={onNavigate}>
-                                <item.icon className="h-5 w-5" />
-                                {item.label}
-                            </Link>
-                        </Button>
+                            <item.icon
+                                className={cn(
+                                    "h-4 w-4 shrink-0",
+                                    isActive ? "text-primary-foreground" : "text-muted-foreground"
+                                )}
+                            />
+                            {item.label}
+                        </Link>
                     );
                 })}
             </nav>
