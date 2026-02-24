@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, LayoutGrid } from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import ThemeToggle from "../theme/theme-toggler";
 
 interface SidebarProps {
     onNavigate?: () => void;
@@ -20,6 +21,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
             icon: LayoutGrid,
         },
     ];
+
 
     return (
         <div className="flex h-full flex-col bg-sidebar text-sidebar-foreground">
@@ -68,6 +70,11 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                     );
                 })}
             </nav>
+
+            {/* Theme Toggle */}
+            <div className="border-t border-sidebar-border px-4 py-4">
+                <ThemeToggle />
+            </div>
         </div>
     );
 }
