@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation";
+
 const Home = () => {
-    return (
-        <div>Home</div>
-    );
+    redirect("/inventory");
 };
 
 export default Home;
