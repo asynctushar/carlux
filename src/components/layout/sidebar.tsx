@@ -6,12 +6,13 @@ import { LayoutGrid } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import ThemeToggle from "../theme/theme-toggler";
+import React from "react";
 
 interface SidebarProps {
     onNavigate?: () => void;
 }
 
-export default function Sidebar({ onNavigate }: SidebarProps) {
+const Sidebar = ({ onNavigate }: SidebarProps) => {
     const pathname = usePathname();
 
     const navItems = [
@@ -77,4 +78,6 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
             </div>
         </div>
     );
-}
+};
+
+export default React.memo(Sidebar);

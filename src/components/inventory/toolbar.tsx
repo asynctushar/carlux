@@ -12,7 +12,7 @@ import {
 import { Search, X, ArrowDown, ArrowUp, ChevronsUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useDebounce } from 'use-debounce';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ToolbarProps {
@@ -157,4 +157,4 @@ const Toolbar = ({ search, sort, onSearchChange, onSortChange }: ToolbarProps) =
     );
 };
 
-export default Toolbar;
+export default React.memo(Toolbar);
