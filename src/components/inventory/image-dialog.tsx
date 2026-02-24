@@ -14,6 +14,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Car } from '@/types/car.type';
 import Image from 'next/image';
+import React from 'react';
 
 interface ImageDialogProps {
     open: boolean;
@@ -30,10 +31,10 @@ const ImageDialog = ({ open, setOpen, car }: ImageDialogProps) => {
                 <DialogHeader className="px-6 pt-6 pb-4 border-b border-border">
                     <div className="flex items-center gap-3">
                         <div className="flex-1 min-w-0">
-                            <DialogTitle className="text-base font-semibold truncate">
+                            <DialogTitle className="text-base font-semibold truncate text-left">
                                 {car.title}
                             </DialogTitle>
-                            <p className="text-sm text-muted-foreground mt-0.5">{car.brand}</p>
+                            <p className="text-sm text-muted-foreground mt-0.5 text-left">{car.brand}</p>
                         </div>
                         <Badge variant="secondary" className="shrink-0 font-mono text-xs">
                             {car.sku}
@@ -85,4 +86,4 @@ const ImageDialog = ({ open, setOpen, car }: ImageDialogProps) => {
     );
 };
 
-export default ImageDialog;
+export default React.memo(ImageDialog);

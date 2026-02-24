@@ -8,7 +8,7 @@ export default function NotFound() {
         <div className="container mx-auto px-4 h-screen flex items-center justify-center">
             <Card className="max-w-md w-full shadow-lg">
                 <CardContent className="p-8 sm:p-12 text-center space-y-6">
-                    <div className="text-8xl font-bold text-destructive/20 select-none">
+                    <div className="text-5xl font-bold text-destructive/20 select-none">
                         404
                     </div>
 

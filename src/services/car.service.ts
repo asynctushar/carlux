@@ -17,8 +17,6 @@ export const getAllCar = async () => {
             };
         }
 
-        console.log(data)
-
         return {
             ok: true,
             data: data.products ?? [],

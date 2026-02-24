@@ -31,9 +31,14 @@ const Inventory = async () => {
 
     return (
         <div>
-            <h1 className="text-2xl font-semibold text-foreground mb-4">
-                Carlux Inventory
-            </h1>
+            <div className="mb-6">
+                <h1 className="text-2xl font-semibold text-foreground tracking-tight">
+                    Carlux Inventory
+                </h1>
+                <p className="text-sm text-muted-foreground mt-1">
+                    Manage and browse your vehicle stock
+                </p>
+            </div>
 
             <InventoryClient cars={cars} />
         </div>
