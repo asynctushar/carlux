@@ -9,7 +9,7 @@ const Inventory = async () => {
 
     if (!result.ok) {
         return (
-            <div className="container mx-auto px-4 min-h-[70vh] flex items-center justify-center">
+            <div className="flex min-h-[70vh] items-center justify-center px-4">
                 <Card className="max-w-md w-full shadow-lg">
                     <CardContent className="p-8 text-center space-y-4">
                         <div className="w-16 h-16 rounded-full bg-destructive/10 flex items-center justify-center mx-auto">
@@ -30,8 +30,8 @@ const Inventory = async () => {
     const cars: Car[] = result.data;
 
     return (
-        <div>
-            <div className="mb-6">
+        <div className="p-4 sm:p-6 lg:p-8">
+            <div className="mb-6 animate-in fade-in-0 slide-in-from-bottom-2 transition-all duration-400">
                 <h1 className="text-2xl font-semibold text-foreground tracking-tight">
                     Carlux Inventory
                 </h1>

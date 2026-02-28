@@ -49,7 +49,7 @@ const InventoryClient = ({ cars: allCars }: InventoryClientProps) => {
     const handleSortChange = (val: SortOption) => { setSort(val); setPage(0); };
 
     return (
-        <div className="bg-background pb-16">
+        <div className="animate-in fade-in-0 slide-in-from-bottom-4 duration-400 transition-all">
             <div className="py-8">
                 <Toolbar
                     search={search}
@@ -114,7 +114,7 @@ const InventoryClient = ({ cars: allCars }: InventoryClientProps) => {
                                     </thead>
                                     <tbody className="divide-y divide-border">
                                         {currentCars.map((car) => (
-                                            <tr key={car.id} className="hover:bg-muted/30 transition-colors">
+                                            <tr key={car.id} className="hover:bg-muted/30 transition-all animate-in fade-in-0 slide-in-from-bottom-1 duration-300">
                                                 <td className="px-5 py-4 font-mono text-xs text-muted-foreground/90">{car.sku}</td>
                                                 <td className="px-5 py-4 font-medium text-foreground/90 max-w-50 truncate">{car.title}</td>
                                                 <td className="px-5 py-4 text-foreground">{car.brand}</td>
