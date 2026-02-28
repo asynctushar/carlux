@@ -58,7 +58,7 @@ const Toolbar = ({ search, sort, onSearchChange, onSortChange }: ToolbarProps) =
     const hasActiveFilter = inputValue.trim() !== '' || sort !== 'default';
 
     return (
-        <div className="mb-5 rounded-xl border border-border bg-card shadow-sm overflow-hidden animate-in fade-in-0 slide-in-from-bottom-4 duration-400 transition-all">
+        <div className="mb-5 rounded-xl bg-card shadow-sm border-0 overflow-hidden animate-in fade-in-0 slide-in-from-bottom-4 duration-400 transition-all">
 
             <div className="px-4 py-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
 

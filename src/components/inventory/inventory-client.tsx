@@ -98,7 +98,7 @@ const InventoryClient = ({ cars: allCars }: InventoryClientProps) => {
                 ) : (
                     <>
                         {/* Desktop Table */}
-                        <Card className="shadow-sm border overflow-hidden hidden md:block p-0">
+                        <Card className="shadow-sm  overflow-hidden hidden md:block p-0">
                             <CardContent className="p-0">
                                 <table className="w-full text-sm">
                                     <thead>
